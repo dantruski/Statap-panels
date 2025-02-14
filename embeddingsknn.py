@@ -1,7 +1,41 @@
 import numpy as np
+import nltk
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
+
+corpus = [
+    "Le roi gouverne le royaume avec force.",
+    "Le roi est un homme puissant et courageux.",
+    "La reine dirige le palais avec sagesse.",
+    "La reine est une femme élégante et intelligente.",
+    "L'homme travaille dur et défend ses idées.",
+    "La femme apporte la douceur et la persévérance.",
+    "Dans le passé, les rois et les reines étaient respectés.",
+    "Le roi aime la guerre, mais la paix règne grâce à la reine."
+]
+
+
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+stop_words = stopwords.words('french')  
+lemmatizer = WordNetLemmatizer()  # Pour réduire les mots à leur forme "canonique".
+ 
+ # Preprocessing du texte
+def new_text(text):
+    new_words = []
+    words = text.split()
+    for word in words :
+        if word.lower() not in stop_words:
+            new_words.append(lemmatizer.lemmatize(word.lower())) # réduction du mot à sa "racine".
+    return ' '.join(new_words)
+
+corpus = [new_text(doc) for doc in corpus]
+
+# Génération d'embeddings via k-NN
 class EmbeddingskNN:
     def __init__(self, n_neighbors=5):   
         self.vectorizer = TfidfVectorizer()  # Initialisation du vectoriseur TF-IDF
@@ -30,16 +64,8 @@ class EmbeddingskNN:
         else:
             raise ValueError(f"'{word}' n'apparait pas dans notre texte !")
         
-corpus = [
-    "Le roi gouverne le royaume avec force.",
-    "Le roi est un homme puissant et courageux.",
-    "La reine dirige le palais avec sagesse.",
-    "La reine est une femme élégante et intelligente.",
-    "L'homme travaille dur et défend ses idées.",
-    "La femme apporte la douceur et la persévérance.",
-    "Dans le passé, les rois et les reines étaient respectés.",
-    "Le roi aime la guerre, mais la paix règne grâce à la reine."
-]
+
+# Exemples :
 
 embedding_model = EmbeddingskNN(n_neighbors=6)
 embedding_model.fit(corpus)
