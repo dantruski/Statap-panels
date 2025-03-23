@@ -1,9 +1,12 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+from sklearn.cluster import KMeans
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
+from sklearn.metrics import silhouette_score
 
 
 corpus = [
@@ -76,3 +79,34 @@ embedding_reine = embedding_model.embbegin_from_word('reine')
 
 print("Embedding pour 'reine algébrique':", embedding_roi - embedding_homme + embedding_femme)
 print("Embedding pour 'reine':", embedding_reine)
+
+
+# Choix du nombre de voisins optimal
+## On va maintenant sélectionner l'hyperparamètre k qui donne les "meilleurs" embeddings. 
+# Pour cela, nous allons utiliser le coefficient de silhouette qui, pour un mot donné, mesure la différence entre la distance moyenne entre le mot et ses voisins (même cluster) et la distance moyenne entre le mot et les mots des autres clusters.
+# Le k optimal sera alors celui qui maximisera le coefficient de silhouette (relation sémantique plus forte).
+
+def optimal_k_value(corpus):
+    k_max = 10 # Nombre maximal de voisins
+    scores = []  #Liste contenant les scores de silhouette (moyens) pour chaque k
+    for k in range(2,k_max):
+        model_knn = EmbeddingskNN(n_neighbors=k)
+        model_knn.fit(corpus)
+        embeddings = [model_knn.embbegin_from_word(word) for word in model_knn.words]
+
+        kmeans = KMeans(n_clusters=k, random_state=0).fit(embeddings)
+        kmeans.fit(embeddings)   
+        labels_found = kmeans.labels_
+        
+        scores.append(silhouette_score(embeddings, labels_found))
+    
+# On trace à présent le graphe associé (score en fonction de l'hyperparamètre k)
+
+    plt.plot(range(2, k_max), scores, marker='o')
+    plt.title('Choix du nombre optimal de voisins')
+    plt.xlabel('Nombre de voisins')
+    plt.ylabel('Silhouette Scores')
+    plt.show()
+
+optimal_k_value(corpus)
+        
