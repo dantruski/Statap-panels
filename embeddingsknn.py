@@ -40,7 +40,7 @@ corpus = [new_text(doc) for doc in corpus]
 
 # Génération d'embeddings via k-NN
 class EmbeddingskNN:
-    def __init__(self, n_neighbors=5):   
+    def __init__(self, n_neighbors=9):   
         self.vectorizer = TfidfVectorizer()  # Initialisation du vectoriseur TF-IDF
         self.matrix = None  # Matrice des coefficients TF-IDF
         self.words = None  # Liste des mots
@@ -109,4 +109,5 @@ def optimal_k_value(corpus):
     plt.show()
 
 optimal_k_value(corpus)
-        
+
+# 9 est la valeur optimale pour k. On entraîne donc désormais le modèle pour k=9.  

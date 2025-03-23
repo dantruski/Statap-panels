@@ -115,7 +115,7 @@ word_embeddings = {}
 for word in words_to_check:
     # Tokenization du mot
     inputs = tokenizer(word, return_tensors="pt", padding=True, truncation=True)
-    outputs = model_bert(**inputs)  # Modifié : On utilise model_bert ici
+    outputs = model_bert(**inputs) 
     # Calcul de l'embedding
     word_embeddings[word] = outputs.last_hidden_state.mean(dim=1).detach().numpy().flatten()
     
@@ -132,5 +132,10 @@ print("Embedding pour roi", roi[:8])
 print("Embedding pour reine", reine[:8])
 print("Embedding pour homme", homme[:8])
 print("Embedding pour femme", femme[:8])
+
+# Calcul - Embbeding "reine algébrique"
+embedding_ra = roi - homme + femme
+print("Embedding 'reine algébrique'", embedding_ra[:8])
+print("Embedding pour reine", reine[:8])  # Embedding "reine"
 
 
