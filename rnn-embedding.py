@@ -39,6 +39,29 @@ def extract_embedding(df):
     return {"embeddings": embeddings, "cls_embeddings": cls_embeddings}
 
 embedding = df.apply(extract_embedding, axis=1)
-print(embedding[0])
 print(embedding[0]["embeddings"].shape)
 
+# Separate the history column into user and assistant content
+def separate_history(history):
+    user_content = ""
+    assistant_content = ""
+    for entry in history:
+        if entry["role"] == "user":
+            user_content = entry["content"]
+        elif entry["role"] == "assistant":
+            assistant_content = entry["content"]
+    return pd.Series([user_content, assistant_content], index=["user", "assistant"])
+
+# Apply the function to the history column
+df_copy = df["history"].apply(separate_history)
+
+# Merge the separated history columns back with the original DataFrame
+df_merged= pd.concat([df, df_copy], axis=1)
+df_merged = df_merged.drop(columns=["history"])
+
+# Reorder columns to make 'user' and 'assistant' the first and second columns
+columns_order = ["user", "assistant"] + [col for col in df_merged.columns if col not in ["user", "assistant"]]
+df_merged = df_merged[columns_order]
+
+# Display the updated DataFrame
+df_merged.head()
