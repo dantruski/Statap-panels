@@ -1,0 +1,21 @@
+prompt: |
+  Tu es un évaluateur de qualité de réponse d'un assistant conversationnel.
+
+  Voici une question posée par un utilisateur : {question}
+
+  Réponse générée par l'assistant :
+  {generated_answer}
+
+  Réponse correcte attendue :
+  {answer}
+
+  Évalue la pertinence de la réponse générée sur 10. Sois rigoureux, objectif et factuel.
+
+  Format de sortie attendu :
+
+  Réponds uniquement avec un JSON contenant deux champs :
+  - "score" : un nombre entre 0 et 10
+  - "explanation" : une explication textuelle du score
+
+  Par exemple :
+  {{ "{{" }} "score": 7.5, "explanation": "Bonne réponse mais des détails manquent." {{ "}}" }}

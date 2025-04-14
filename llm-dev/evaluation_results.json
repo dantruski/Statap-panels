@@ -1,0 +1,164 @@
+[
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "What are the main business activities of Bouygues?"
+      },
+      {
+        "role": "assistant",
+        "content": "The main business activities of Bouygues are historically related to construction and real estate. The group strengthened its industrial position in the 1980s with the acquisition of Colas, which is involved in road construction, and a stake in Alstom in 2006, which operates in energy and transport. Additionally, Bouygues diversified into media with the acquisition of TF1 and into telecommunications by obtaining the third mobile phone license."
+      }
+    ],
+    "question": "What other sectors are they involved in?",
+    "query_modifier_question": "What other sectors is Bouygues involved in besides construction, real estate, media, and telecommunications?",
+    "generated_answer": "Besides construction, real estate, media, and telecommunications, Bouygues is also involved in energy, roads, and multi-technical services. ",
+    "answer": "Besides construction and real estate, Bouygues is also involved in media and telecommunications.",
+    "score": 3,
+    "explanation": "La réponse générée mentionne des secteurs incorrects comme l'énergie, les routes, et les services multi-techniques, qui ne sont pas des secteurs principaux de Bouygues. Elle ne répond pas correctement à la question posée par l'utilisateur."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "What is employee shareholding at Bouygues?"
+      },
+      {
+        "role": "assistant",
+        "content": "Since 1970, Bouygues has developed an employee shareholding scheme to involve its employees. Currently, with 20.6% of the shares and 28.9% of the voting rights, the Group leads the CAC40 companies in employee shareholding and is among the Top 10 European companies with such plans."
+      }
+    ],
+    "question": "How did it help against Vincent Bolloré's attempt?",
+    "query_modifier_question": "How did employee shareholding at Bouygues help against Vincent Bolloré's attempt?",
+    "generated_answer": "In 1998, Bouygues' employee shareholding helped counter a hostile takeover attempt by Vincent Bolloré. Employees, who then held 6.5% of the capital, opposed the takeover with the support of the company's management. ",
+    "answer": "The employee shareholding helped counter Vincent Bolloré's raid attempt in 1998, as employees holding 6.5% of the capital, with the support of the management, opposed the hostile takeover, thus protecting the social capital.",
+    "score": 9,
+    "explanation": "La réponse générée par l'assistant est pertinente et correcte. Elle mentionne l'année de l'événement, le pourcentage de capital détenu par les employés, et le soutien de la direction, ce qui sont les éléments clés de la réponse attendue. Cependant, elle ne mentionne pas explicitement la protection du 'social capital', ce qui est un détail supplémentaire dans la réponse correcte attendue."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "Where is the headquarters of Bouygues located?"
+      },
+      {
+        "role": "assistant",
+        "content": "The headquarters of Bouygues is located at 32 avenue Hoche in Paris."
+      }
+    ],
+    "question": "And what about Bouygues Construction?",
+    "query_modifier_question": "Where is the headquarters of Bouygues Construction located?",
+    "generated_answer": "The headquarters of Bouygues Construction, known as Challenger, is located in Guyancourt, Yvelines. ",
+    "answer": "The headquarters of Bouygues Construction, known as Challenger, is located in Guyancourt in the Yvelines.",
+    "score": 9.5,
+    "explanation": "La réponse générée est presque correcte. Elle mentionne correctement l'emplacement du siège de Bouygues Construction à Guyancourt, Yvelines. La seule différence est l'absence de la préposition 'in' avant 'Yvelines', ce qui est un détail mineur."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "What happens when you click on sponsored links in search engines?"
+      },
+      {
+        "role": "assistant",
+        "content": "When you click on sponsored links in search engines, the search engine earns money because some sites pay to appear in those privileged positions."
+      }
+    ],
+    "question": "How much money does this generate in France?",
+    "query_modifier_question": "How much money do search engines earn from sponsored links in France?",
+    "generated_answer": "Search engines in France earn approximately 2.4 billion euros per year from sponsored links. ",
+    "answer": "In France, this generates about 2.4 billion euros per year.",
+    "score": 8,
+    "explanation": "La réponse générée par l'assistant est correcte en termes de chiffre, mais elle pourrait être améliorée en précisant que le chiffre concerne les revenus générés par les liens sponsorisés. La formulation est légèrement différente de la réponse attendue, mais elle reste compréhensible et pertinente."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "How can I install Lilo for all my employees?"
+      },
+      {
+        "role": "assistant",
+        "content": "To install Lilo for all your employees, you can either let each employee choose to install Lilo themselves through a dedicated process, or your IT department can set Lilo as the default search engine on all company computers using our GPO procedure."
+      }
+    ],
+    "question": "Is there any cost involved?",
+    "query_modifier_question": "Is there any cost involved in installing Lilo for all employees?",
+    "generated_answer": "Not enough information is available about the cost of installing Lilo for all employees. Please contact Lilo support for further assistance. ",
+    "answer": "No, using Lilo in a business setting is simple and free.",
+    "score": 3,
+    "explanation": "La réponse générée par l'assistant est vague et ne fournit pas l'information correcte que l'installation de Lilo est gratuite pour les employés. Elle redirige l'utilisateur vers le support de Lilo sans répondre directement à la question, ce qui diminue sa pertinence."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "Can my IT department set Lilo as the default search engine?"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, your IT department can use our GPO procedure to set Lilo as the default search engine on all company computers."
+      }
+    ],
+    "question": "How can we get assistance with this?",
+    "query_modifier_question": "How can the IT department get assistance with setting Lilo as the default search engine using GPO procedure?",
+    "generated_answer": "I'm unable to provide the desired information. Please visit the information desk for assistance. Do you have any other questions? ",
+    "answer": "You can contact us to guide you through all the steps, and it doesn't commit you to anything.",
+    "score": 2,
+    "explanation": "La réponse générée par l'assistant ne répond pas à la question posée. Elle ne fournit aucune information sur la procédure GPO pour définir Lilo comme moteur de recherche par défaut. De plus, elle redirige l'utilisateur vers un bureau d'information, ce qui n'est pas pertinent dans le contexte d'une assistance technique. La réponse correcte attendue propose une assistance directe, ce qui est plus approprié."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "What is Source?"
+      },
+      {
+        "role": "assistant",
+        "content": "Source is a responsible mobile plan launched by Bouygues Telecom that allows you to support associations with your unused gigabytes."
+      }
+    ],
+    "question": "How does it work?",
+    "query_modifier_question": "How does the Source mobile plan by Bouygues Telecom work?",
+    "generated_answer": "The Source mobile plan by Bouygues Telecom offers 80 GB of data for 10 euros per month with no commitment. It includes unlimited calls and SMS/MMS. Unused data can be converted into 'gouttes' and donated to associations through the Lilo platform. The plan uses the Bouygues Telecom network and does not have out-of-plan fees. ",
+    "answer": "Your unused gigabytes are converted into 'gouttes' in your Source app, which you can donate to associations of your choice through our partner Lilo.",
+    "score": 8,
+    "explanation": "La réponse générée par l'assistant est globalement correcte et couvre les principaux aspects du plan Source de Bouygues Telecom, notamment les données, les appels, et le concept de 'gouttes'. Cependant, elle pourrait être améliorée en précisant que les 'gouttes' sont gérées via l'application Source, comme mentionné dans la réponse correcte attendue."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "How many gigabytes are included in the Source plan?"
+      },
+      {
+        "role": "assistant",
+        "content": "The Source plan includes 80 gigabytes, which is enough to cover all your daily uses."
+      }
+    ],
+    "question": "What if I need more?",
+    "query_modifier_question": "What options are available if more than 80 gigabytes are needed in the Source plan?",
+    "generated_answer": "I'm unable to provide the desired information. Please visit the information desk for assistance. Do you have other questions? ",
+    "answer": "You have the option to subscribe to recharges at 2€ for 5 gigabytes.",
+    "score": 2,
+    "explanation": "La réponse générée par l'assistant ne répond pas à la question posée par l'utilisateur. Elle ne fournit aucune information sur les options disponibles pour obtenir plus de 80 gigabytes dans le plan Source. Elle redirige simplement l'utilisateur vers un bureau d'information, ce qui n'est pas utile dans le contexte d'une assistance conversationnelle. La réponse attendue mentionne une option spécifique de recharge, ce qui est pertinent et utile."
+  },
+  {
+    "history": [
+      {
+        "role": "user",
+        "content": "I lost my phone with my SIM card, what should I do?"
+      },
+      {
+        "role": "assistant",
+        "content": "You can suspend your line via the Source app on another phone and order a new SIM card for 9€."
+      }
+    ],
+    "question": "How can I contact support?",
+    "query_modifier_question": "How can I contact support for a lost phone with a SIM card?",
+    "generated_answer": "You can contact the customer support center by calling +33 4 72 22 82 83. Alternatively, you can declare your lost phone online at https://www.lyonaeroports.com/services/objets-trouves. ",
+    "answer": "Source offers customer support via their website, Messenger, Instagram, Whatsapp, and by email at support@sourcemobile.fr.",
+    "score": 2,
+    "explanation": "La réponse générée n'est pas pertinente car elle fournit des informations de contact pour un aéroport, ce qui n'est pas lié à la question de l'utilisateur concernant le support pour un téléphone perdu avec une carte SIM. Elle ne mentionne pas les canaux de support corrects tels que le site web, Messenger, Instagram, Whatsapp, ou l'email spécifié dans la réponse correcte attendue."
+  }
+]
