@@ -1,34 +1,36 @@
 import os
+import json
+import yaml
 from dotenv import load_dotenv
 from langchain_openai import AzureChatOpenAI
-from langchain_core.messages import HumanMessage, SystemMessage
+from langchain_core.output_parsers import JsonOutputParser
+from langchain.prompts import ChatPromptTemplate
 
-# Charge le .env à jour et écrase les éventuelles anciennes valeurs
-load_dotenv(override=True)
+# Chargement des variables d’environnement depuis .env
+load_dotenv()
 
-# Vérification de la présence des variables d'environnement
-required_vars = [
-    "OPENAI_API_KEY",
-    "AZURE_OPENAI_ENDPOINT",
-    "AZURE_DEPLOYMENT_NAME",
-    "OPENAI_API_VERSION",
-]
+# Chargement du prompt depuis le YAML
+def load_yaml_prompt(path: str, key: str = "prompt") -> str:
+    with open(path, "r", encoding="utf-8") as f:
+        content = yaml.safe_load(f)
+    return content[key]
 
-for var in required_vars:
-    value = os.getenv(var)
-    if not value:
-        raise ValueError(f"❌ Variable {var} manquante dans le .env")
-    try:
-        value.encode("ascii")
-    except UnicodeEncodeError:
-        raise ValueError(f"❌ Variable {var} contient un caractère non-ASCII : {value}")
+# Charger le prompt
+BENCH_PROMPT = load_yaml_prompt(
+    "/Users/bilalramadan/Statap-panels/Statap-panels-1/llm-dev/bench_prompt.yaml"
+)
 
-# Instanciation du modèle Azure via LangChain avec les bons paramètres
-chat = AzureChatOpenAI(
-    azure_deployment=os.getenv("AZURE_DEPLOYMENT_NAME"),
-    openai_api_version=os.getenv("OPENAI_API_VERSION"),
+# Création du prompt LangChain
+prompt_template = ChatPromptTemplate.from_template(BENCH_PROMPT)
+print("Variables attendues :", prompt_template.input_variables)
+
+# Initialisation du modèle Azure OpenAI
+llm = AzureChatOpenAI(
+    deployment_name=os.getenv("AZURE_DEPLOYMENT_NAME"),
+    api_version=os.getenv("OPENAI_API_VERSION"),
     azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-    openai_api_key=os.getenv("OPENAI_API_KEY"),
+    api_key=os.getenv("AZURE_OPENAI_KEY"),
+    temperature=0.0,
 )
 
 # Envoi d'un message comme dans la doc officielle
