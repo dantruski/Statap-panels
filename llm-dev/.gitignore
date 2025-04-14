@@ -1,1 +1,8 @@
-.env # sassurer quon ignore le .env
+# 🔒 Ne jamais versionner les infos sensibles
+.env
+
+# 🐍 Environnement virtuel
+Bilalvenv/
+
+#Database
+temps_dataset.json 

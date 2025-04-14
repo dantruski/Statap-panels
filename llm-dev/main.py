@@ -38,7 +38,6 @@ messages = [
 ]
 
 
-
 # Obtenir la réponse
 response = chat.invoke(messages)
 print(response.content)
