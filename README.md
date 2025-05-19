@@ -23,7 +23,7 @@ Chaque membre du groupe ayant travaillé en priorité sur une tâche spécifique
 - La génération d'embeddings avec les méthodes k-NN et MLP est présentée dans la branche de `Titouan`.
 - La comparaison d'embeddings avec t-SNE est située dans la branche de `Bilal`.
 - La classification de sentiments par LSTM est située dans la branche de `Daniel`.
-- Enfin, la génération de profils d'utilisateurs par LLM est proposée dans la branche de `Bilal`.
+- Enfin, la génération de profils d'utilisateurs par LLM est proposée dans la branche de `Bilal`.  
 
 
 
