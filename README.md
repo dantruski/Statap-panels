@@ -1,6 +1,3 @@
-# Statap-panels
-Projet de statistiques appliquées 2025 : Analyse de conversations pour établir des panels utilisateurs (Jumbo Mana)
-
 # Projet de statistiques appliquées 2025 : Analyse de conversations pour établir des panels utilisateurs (Jumbo Mana)
 
 ![alt text](https://www.lejournaldesentreprises.com/sites/lejournaldesentreprises.com/files/styles/landscape_web_lg_2x/public/2025-04/Jumbo-Mana-vient-de-dployer-Lisa-son-nouvel-ava-374440.jpeg?h=74596f6a&itok=QwtmNfXl.png)
